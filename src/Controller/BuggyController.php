@@ -13,8 +13,9 @@ class BuggyController extends AbstractController
     {
         $data = $this->getData();
 
+        $message = $data['nonexistent_key'] ?? 'Je ne bug plus !';
         return $this->render('welcome.html.twig', [
-            'data' => $data['nonexistent_key'], // Bug : accès à une clé inexistante
+            'message' => $message,
         ]);
     }
 
